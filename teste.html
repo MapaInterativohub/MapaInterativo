@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css-pop-up_min.css">
+</head>
+
+<body>
+  <div class="popup-content">
+    <div class="conteine-min">
+      <img src="/public/img/ExemploDePopup.jpeg" alt="img_local" class="img_info">
+      <div class="pop-info">
+        <div class="text-info-text">
+          <h3 class="cssFont_2">${dado.nome}</h3>
+          <p class="cssFont_1"><strong>Endereço:</strong> ${dado.rua}, ${dado.numero} - ${dado.bairro}, ${dado.cidade} -
+            ${dado.estado}</p>
+        </div>
+        <div>
+          <button class="myButton" onclick="maisInfo(${dado.id})">Ver Mais</button>
+        </div>
+      </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+.cssFont_2{
+    font-size: 0.8rem;
+}
+.cssFont_1{
+    font-size: 0.5rem;
+}
+
+.pop-info{
+    position: relative;
+    background: red;
+    bottom: 50px;
+    /* margin: 3px; */
+}
+.popup-content{
+    padding: 8px;
+    background: rebeccapurple;
+    width: 30%;
+    height: 9rem;
+    border-radius: 10px;
+    text-align: center;
+}
+.text-info-text{
+    text-align: left;
+}
+.img_info{
+    width: 8.5rem;
+    /* width: max-content; */
+}

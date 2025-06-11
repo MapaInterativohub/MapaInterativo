@@ -1,0 +1,16 @@
+<div class="modal-content">
+    <div class="text_popup" id="txt_popup_heder">
+      <h2>{{dado.nome}} - {{dado.cidade}}</h2>
+    </div>
+      <img src="/img/ExemploDePopup.jpeg" alt="Imagem do local" id="img_popup" style="text-align: center;">
+    <div class="text_popup" id="txt_popup_base">
+      <p><strong>Horário de Funcionamento:</strong><br>{{dado.breve}}<br>Sábados: 09h00 às 13h</p>
+      <p><strong>Localização:</strong><br>{{dado.rua}}, {{dado.numero}}, {{dado.bairro}}, {{dado.cidade}} - {{dado.estado}}</p>
+      <p><strong>Telefone:</strong> {{dado.telefone}}</p>
+      <p><strong>Descrição:</strong> {{dado.descricao}}</p>
+    </div>
+    <div class="buton">
+      <button class="myButton" id="bts_popupA">Adiciona Favoritos</button>
+      <button class="myButton" id="bts_popupB" onclick="esconderDiv('modalDetalhes')">Fechar</button>
+    </div>
+</div>
