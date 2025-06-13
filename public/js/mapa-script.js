@@ -201,7 +201,7 @@ function filtrarLocais(tipo) {
             case "Trabalho":
               icon = greenIconR;
               break;
-            case "Doação":
+            case "Segurança":
               icon = greenIconA;
               break;
             case "Estudos":

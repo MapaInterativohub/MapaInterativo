@@ -19,7 +19,7 @@ router.post('/addlocais', (req, res) => {
     }
     var totalItens = conteudo.length;
 
-    dados.ad = totalItens++
+    dados.id = totalItens++
 
     conteudo.push(dados);
     
