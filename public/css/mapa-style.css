@@ -1,13 +1,20 @@
-body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
-.conteine-min{
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+.conteine-min {
   width: 200px;
   height: 200px;
-  margin: 0; padding: 0;
+  margin: 0;
+  padding: 0;
   /* background: #666666; */
 }
 .modal {
   display: flex;
-  display:block;
+  display: block;
   position: absolute;
   background: #dadada;
   top: 50%;
@@ -15,36 +22,39 @@ body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   transform: translate(-50%, -50%);
   z-index: 1000;
   width: 90%;
-  height: auto;                /* ativa o flexbox */
-  justify-content: center;     /* alinha horizontalmente */
-  align-items: center;         /* alinha verticalmente */
+  height: auto; /* ativa o flexbox */
+  justify-content: center; /* alinha horizontalmente */
+  align-items: center; /* alinha verticalmente */
   text-align: center;
   padding: 10px;
   border-radius: 15px;
 }
-#img_popup{
+#img_popup {
   width: 70%;
 }
-.text_popup{
+.text_popup {
   display: grid;
   text-align: left;
   margin: 10px;
 }
-.text_popup p{
-  margin: 0; padding: 0;
+.text_popup p {
+  margin: 0;
+  padding: 0;
 }
-.buton{
+.buton {
   display: flex;
 }
 
 #map {
-  margin: 0px; padding: 0; overflow: hidden;
+  margin: 0px;
+  padding: 0;
+  overflow: hidden;
   position: absolute;
   width: 100vw;
   height: 100vh;
 }
-#base_cima{
-  align-self:top;
+#base_cima {
+  align-self: top;
   position: relative;
   z-index: 1000;
   /* background-color: rgb(0, 255, 0); */
@@ -56,85 +66,90 @@ body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   gap: 5px;
 }
 
-#menu-container{
-  position: fixed; bottom: 0; left: 0; width: 100%; background: #eee; padding: 5px; text-align: center;
+#menu-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #eee;
+  padding: 5px;
+  text-align: center;
   height: 30px;
   z-index: 10000;
   background-color: rgb(255, 255, 255);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 5px;
-
 }
-#text{
+#text {
   display: none;
 }
-#base_menu{
+#base_menu {
   display: none;
 }
 
 /* estilização de botoes */
-.img-filtro{
+.img-filtro {
   width: 0.9rem;
   padding: 0px 5px;
 }
 .myButton {
-	box-shadow:inset 0px 1px 0px 0px #ececec;
-	background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
-	background-color:#f9f9f9;
-	border-radius:6px;
-	border:1px solid #dcdcdc;
-	display:inline-block;
-	cursor:pointer;
-	color:#666666;
-	font-family:Arial;
+  box-shadow: inset 0px 1px 0px 0px #ececec;
+  background: linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  border: 1px solid #dcdcdc;
+  display: inline-block;
+  cursor: pointer;
+  color: #666666;
+  font-family: Arial;
   padding: 6px 6px;
-	font-size:0.6rem;
-	font-weight:bold;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #ffffff;
+  font-size: 0.6rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ffffff;
   width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .myButton:hover {
-	background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
-	background-color:#e9e9e9;
+  background: linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+  background-color: #e9e9e9;
 }
 .myButton:active {
-	position:relative;
-	top:1px;
+  position: relative;
+  top: 1px;
 }
 
-.img-mnu{
+.img-mnu {
   width: 1rem;
 }
 
 .myButton-m {
-	box-shadow:inset 0px 1px 0px 0px #ffffff;
-	/* background:linear-gradient(to bottom, #cccccc 5%, #e6e6e6 100%); */
-	background-color:rgb(192, 192, 192);
-	border-radius:6px;
-	border:1px solid #dcdcdc;
-	display:inline-block;
-	cursor:pointer;
-	color:#666666;
-	font-family:Arial;
+  box-shadow: inset 0px 1px 0px 0px #ffffff;
+  /* background:linear-gradient(to bottom, #cccccc 5%, #e6e6e6 100%); */
+  background-color: rgb(192, 192, 192);
+  border-radius: 6px;
+  border: 1px solid #dcdcdc;
+  display: inline-block;
+  cursor: pointer;
+  color: #666666;
+  font-family: Arial;
   padding: 6px 15px;
-	font-size:0.7rem;
-	font-weight:bold;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #ffffff;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ffffff;
   width: 90%;
 }
 .myButton-m:hover {
-	/* background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%); */
-	background-color:#dfdfdf;
+  /* background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%); */
+  /* background-color: #dfdfdf; */
 }
 .myButton-m:active {
-	position:relative;
-	top:1px;
+  position: relative;
+  top: 1px;
 }
 
 /* estilização de  caixa de pesquisa */
@@ -144,7 +159,7 @@ body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   align-items: center;
   background: white;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   padding: 5px;
   /* max-width: 400px; */
   width: 100%;
@@ -170,70 +185,95 @@ body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 }
 
 /* stilo caixa de filtros */
-.caixa-de-filtros{
+.caixa-de-filtros {
   display: flex;
   width: 100%;
   max-width: 400px;
   gap: 5px;
   overflow-x: auto;
 }
-.btn-menu{
+.btn-menu {
   display: none;
 }
-.botao-pequisa{
+.botao-pequisa {
   display: flex;
   flex-wrap: wrap;
   /* background-color: #962a2a; */
   max-width: 400px;
   width: 500px;
 }
-.aba-menu{
-  position: fixed; bottom: 40px; left: 0; width: 98%; background: #eee; padding: 5px; text-align: center;
+.aba-menu {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  width: 98%;
+  background: #eee;
+  padding: 5px;
+  text-align: center;
   display: none;
   z-index: 10000;
   height: 72%;
-  background-color: rebeccapurple;
+  background-color: #eee;
   border-radius: 10px 10px 0px 0px;
 }
 
 /* info menu ditar */
-.img-info{
+.div-info-local {
+  display: flex; /* necessário para ativar o flexbox */
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: center; /* centraliza verticalmente */
+  text-align: center; /* alinha texto/imagem inline no centro */
+  height: 100%; /* opcional: necessário para centralizar verticalmente */
+}
+.img-info {
   border-radius: 10px;
-  width: 9rem;
+  width: 9.5rem;
   margin-right: 5px;
 }
-.caixa-info-local{
+.caixa-info-local {
   padding: 5px;
   margin: 5px 2px;
-  background-color: #d3d3d3;
+  background-color: #ffffff;
   display: flex;
   text-align: center;
   border-radius: 10px;
+  -webkit-box-shadow: 5px 8px 11px -3px rgba(0,0,0,0.42); 
+  box-shadow: 5px 8px 11px -3px rgba(0,0,0,0.42);
 }
-.caixa-info-local h1{
+.caixa-info-local h1 {
+  margin: 0;
+  padding: 0;
   text-align: justify;
   font-size: 0.8rem;
+  color: #222222;
 }
-.caixa-info-local h2{
+.caixa-info-local h2 {
+  margin: 0;
+  padding: 0;
   text-align: justify;
   font-size: 0.5rem;
+  color: #5a5a5a;
 }
-.modal{
-    width: 70%;
+.modal {
+  width: 70%;
+}
+#txt_popup_base p{
+  font-size: 0.7rem;
+  text-align: justify;
 }
 
 @media (min-width: 700px) {
-  .botao-pequisa{
+  .botao-pequisa {
     width: 350px;
   }
-  .botao-pequisa{
+  .botao-pequisa {
     display: flex;
     width: auto;
   }
   .caixa-pesquisa {
     max-width: 250px;
   }
-  .btn-menu{
+  .btn-menu {
     display: block;
     padding: 5px;
     position: absolute;
@@ -245,87 +285,129 @@ body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
     height: 52px;
     border-radius: 30px 30px 30px 30px;
   }
-  .aba-menu{
-    position: absolute; background: #eee; padding: 5px; text-align: center;
+  .aba-menu {
+    position: absolute;
+    background: #eee;
+    padding: 5px;
+    text-align: center;
     bottom: 0px;
     display: none;
     z-index: 1000000000;
     height: 100%;
     width: 300px;
   }
-  #menu-container{
+  #menu-container {
     margin: 0;
     padding: 0;
-    position: absolute; top: 62px; left: 0; background: #ffffff; text-align: center;
+    position: absolute;
+    top: 62px;
+    left: 0;
+    background: #ffffff;
+    text-align: center;
     height: 160px;
     left: 5px;
     display: none;
     width: 52px;
     padding: 5px;
     border-radius: 0% 0% 30px 30px;
-  
   }
-  .caixa-de-filtros{
+  .caixa-de-filtros {
     display: flex;
     max-width: 800px;
     min-width: 100px;
     gap: 5px;
-    justify-self:end;
+    justify-self: end;
   }
-  #base_cima{
+  #base_cima {
     display: grid;
     grid-template-columns: auto 1fr;
-    margin: 10px 0px 0px 72px ;
+    margin: 10px 0px 0px 72px;
   }
-  .myButton-m{
+  #menu-b{
+    position: relative;
+    left: 6px;
+  }
+  .myButton-m {
+    display: inline-block;
+    cursor: pointer;
+    justify-content: center; /* centraliza verticalmente */
+    align-items: center;     /* centraliza horizontalmente */
+    width: 50px;             /* ajuste conforme necessário */
+    height: 50px;            /* ajuste conforme necessário */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+  
+  .change .bar2 {
+    opacity: 0;
+  }
+  
+  .change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+  }
+  
+  .myButton-m {
     padding: 0px;
     height: 50px;
     width: 50px;
-    font-size:0.3rem;
+    font-size: 0.3rem;
     margin: 1px 1px;
     border-radius: 50%;
   }
-  .myButton{
-    font-size:0.9rem;
+  .myButton {
+    font-size: 0.9rem;
   }
-  .modal{
+  .modal {
     width: auto;
   }
-  .modal .modal-content{
+  .modal .modal-content {
     display: grid;
     grid-column: 1fr 1fr;
-    grid-template-areas: 
-    "img header1"
-    "img header2"
-    "img btn";
+    grid-template-areas:
+      "img header1"
+      "img header2"
+      "img btn";
     padding: 10px;
     justify-items: stretch;
     align-items: stretch;
     gap: 10px;
   }
-  #txt_popup_base{
+  #txt_popup_base {
     grid-area: header2;
   }
-  #txt_popup_heder{
+  #txt_popup_heder {
     grid-area: header1;
- 
   }
-  #img_popup{
-    grid-area:img;
+  #img_popup {
+    grid-area: img;
     width: 20rem;
     text-align: center;
   }
-  .buton{
-    grid-area:btn;
+  .buton {
+    grid-area: btn;
     gap: 10px;
     width: auto;
   }
-  #bts_popup #bts_popup{
+  #bts_popup #bts_popup {
     width: auto;
   }
-
 }
 
-.ativo{
+.ativo {
   background-color: #dadada;
 }
