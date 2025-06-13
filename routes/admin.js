@@ -51,7 +51,7 @@ router.get("/pontos/:id", (req, res) => {
 
     // Renderiza apenas o partial com layout false
     // res.json(pontos)
-    res.render("_popup_map", { layout: false, dado });
+    res.render("_html_mapa_popup_map", { layout: false, dado });
   });
 });
 

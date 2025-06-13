@@ -249,7 +249,7 @@ body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
     position: absolute; background: #eee; padding: 5px; text-align: center;
     bottom: 0px;
     display: none;
-    z-index: 10000;
+    z-index: 1000000000;
     height: 100%;
     width: 300px;
   }

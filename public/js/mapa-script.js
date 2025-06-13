@@ -87,19 +87,19 @@ function esconderDiv(idDaDiv) {
   }
 }
 
-const div = document.getElementById('modalDetalhes');
-document.addEventListener('click', function (event) {
+const div = document.getElementById("modalDetalhes");
+document.addEventListener("click", function (event) {
   const isClickInside = div.contains(event.target);
-  const isButtonClick = event.target.tagName === 'BUTTON';
+  const isButtonClick = event.target.tagName === "BUTTON";
 
   if (!isClickInside && !isButtonClick) {
-    div.style.display = 'none';
+    div.style.display = "none";
   }
 });
 
 function addFavoritoscliente(id) {
   var res = `http://localhost:3000/admin/ponto/${id}`;
-  
+
   fetch(res)
     .then((res) => res.text()) // se o servidor retorna HTML
     .then((html) => {
@@ -107,25 +107,50 @@ function addFavoritoscliente(id) {
       // Adiciona o novo card no final da div
       const container = document.getElementById("caixa-info-local");
       container.insertAdjacentHTML("beforeend", html);
-      
+
       document.getElementById("modalDetalhes").style.display = "none";
     })
-    .catch(err => {
+    .catch((err) => {
       console.error("Erro ao buscar info:", err);
     });
 }
+function salvarHistorico(id) {
+  var res = `http://localhost:3000/admin/ponto/${id}`;
 
+  fetch(res)
+    .then((res) => res.text()) // se o servidor retorna HTML
+    .then((html) => {
+      map.closePopup();
+      // Adiciona o novo card no final da div
+      
+      const container = document.getElementById("caixa-info-historico");
+      const agora = new Date();
+      console.log(agora);
+
+      const hora = agora.toLocaleTimeString();
+      const data = agora.toLocaleDateString();
+
+      container.insertAdjacentHTML("beforeend", html);
+
+      const iddata = document.getElementById("data_hitorico"+id);
+      iddata.innerHTML = "Visualizado no dia "+data+" as "+hora+".";
+    })
+    .catch((err) => {
+      console.error("Erro ao buscar info:", err);
+    });
+}
 
 function maisInfo(id) {
   var res = `http://localhost:3000/admin/pontos/${id}`;
   fetch(res)
     .then((res) => res.text()) // <-- aqui é .text() porque o servidor retorna HTML
     .then((html) => {
+      salvarHistorico(id);
       map.closePopup();
       document.getElementById("modalDetalhes").innerHTML = html;
       document.getElementById("modalDetalhes").style.display = "block";
     })
-    .catch(err => {
+    .catch((err) => {
       console.error("Erro ao buscar info:", err);
     });
 }
@@ -199,7 +224,7 @@ function filtrarLocais(tipo) {
           const marker = L.marker([ponto.latitude, ponto.longitude], { icon })
             .addTo(map)
             .bindPopup(
-              popup, // Opções do popup (segundo argumento)
+              popup // Opções do popup (segundo argumento)
             );
           marcadores.push(marker);
 
