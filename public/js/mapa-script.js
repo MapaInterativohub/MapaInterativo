@@ -164,6 +164,9 @@ function filtrarLocais(tipo) {
             case "Estudos":
               icon = greenIconV;
               break;
+            case "Serviços Sociais":
+              icon = greenIconV;
+              break;
             default:
               console.log("Categoria desconhecida:", ponto.categoria);
               return; // pula esse ponto

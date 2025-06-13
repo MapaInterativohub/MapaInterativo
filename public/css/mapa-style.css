@@ -266,14 +266,14 @@ body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
   }
   .caixa-de-filtros{
     display: flex;
-    max-width: 400px;
+    max-width: 800px;
     min-width: 100px;
     gap: 5px;
     justify-self:end;
   }
   #base_cima{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto 1fr;
     margin: 10px 0px 0px 72px ;
   }
   .myButton-m{
