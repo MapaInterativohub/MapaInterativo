@@ -69,7 +69,7 @@ function btn_click(id_btn,idAba) {
     menu()
 
     // oculta abas
-    const abas = document.querySelectorAll('.titulo-menu');
+    const abas = document.querySelectorAll('.parte');
     abas.forEach(aba => aba.style.display = 'none');
 
     // Exibe a aba correspondente

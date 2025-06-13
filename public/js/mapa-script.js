@@ -97,6 +97,24 @@ document.addEventListener('click', function (event) {
   }
 });
 
+function addFavoritoscliente(id) {
+  var res = `http://localhost:3000/admin/ponto/${id}`;
+  
+  fetch(res)
+    .then((res) => res.text()) // se o servidor retorna HTML
+    .then((html) => {
+      map.closePopup();
+      // Adiciona o novo card no final da div
+      const container = document.getElementById("caixa-info-local");
+      container.insertAdjacentHTML("beforeend", html);
+      
+      document.getElementById("modalDetalhes").style.display = "none";
+    })
+    .catch(err => {
+      console.error("Erro ao buscar info:", err);
+    });
+}
+
 
 function maisInfo(id) {
   var res = `http://localhost:3000/admin/pontos/${id}`;

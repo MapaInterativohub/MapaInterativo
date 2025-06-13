@@ -17,7 +17,7 @@ router.get("/gerenciarlocais", (req, res) => {
   res.render("gerencia_locais", {
     layout: "main_admin",
     css: ["style-card.css"],
-    js:["sripts-locais-salvos.js"]
+    js: ["sripts-locais-salvos.js"],
   });
 });
 
@@ -39,19 +39,41 @@ router.get("/pontos", (req, res) => {
 });
 
 router.get("/pontos/:id", (req, res) => {
-    const id = parseInt(req.params.id);
-  
-    fs.readFile(filePath, "utf8", (err, data) => {
-        if (err) return res.status(500).send("Erro ao ler arquivo JSON");
-    
-        const pontos = JSON.parse(data);
-        const dado = pontos.find((p) => p.id === id);
-    
-        if (!dado) return res.status(404).send("Ponto não encontrado");
-    
-        // Renderiza apenas o partial com layout false
-        res.render("_popup_map copy", { layout: false, dado  });
-      });
+  const id = parseInt(req.params.id);
+
+  fs.readFile(filePath, "utf8", (err, data) => {
+    if (err) return res.status(500).send("Erro ao ler arquivo JSON");
+    console.log(res);
+    const pontos = JSON.parse(data);
+    const dado = pontos.find((p) => p.id === id);
+
+    if (!dado) return res.status(404).send("Ponto não encontrado");
+
+    // Renderiza apenas o partial com layout false
+    // res.json(pontos)
+    res.render("_popup_map", { layout: false, dado });
   });
+});
+
+router.get("/ponto/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+
+  fs.readFile(filePath, "utf8", (err, data) => {
+    if (err) return res.status(500).send("Erro ao ler arquivo JSON");
+    console.log(res);
+    const pontos = JSON.parse(data);
+    const dado = pontos.find((p) => p.id === id);
+
+    if (!dado) return res.status(404).send("Ponto não encontrado");
+
+    // Renderiza apenas o partial com layout false
+    pontos.forEach( dado => {
+      if (dado.id === id) {
+        // res.json(dado)
+        res.render("_html_mapa_cardeFavoritos", { layout: false, dado });
+      }
+    });
+  });
+});
 
 module.exports = router;

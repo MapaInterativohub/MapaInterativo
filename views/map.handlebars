@@ -11,8 +11,8 @@
                 </div>
             </div>
             <div class="caixa-de-filtros">
-                <button class="myButton" onclick="filtrarLocais('Serviços Sociais')"><img src="/img/servico.png" alt="Ico Estudo"
-                        class="img-filtro"> Serviços Sociais</button>
+                <button class="myButton" onclick="filtrarLocais('Serviços Sociais')"><img src="/img/servico.png"
+                        alt="Ico Estudo" class="img-filtro"> Serviços Sociais</button>
                 <button class="myButton" onclick="filtrarLocais('Estudos')"><img src="/img/lendo.png" alt="Ico Estudo"
                         class="img-filtro"> Estudos</button>
                 <button class="myButton" onclick="filtrarLocais('Trabalho')"><img src="/img/servico.png"
@@ -26,24 +26,42 @@
 
         </div>
         <div class="aba-menu" id="aba-menu">
-            <h1 id="perfio" class="titulo-menu" style="display: none;">Meu Perfio</h1>
-            <h1 id="hitorico" class="titulo-menu" style="display: none;">Historico</h1>
-            <h1 id="locais" class="titulo-menu" style="display: none;">Meus Locais</h1>
-            <div class="info">
-                <div class="caixa-info-local">
-                    <div class="div-info-local">
-                        <img src="/img/info-img.jpg" alt="Imagem do local" class="img-info">
-                    </div>
-                    <div class="endereco-info">
-                        <h1 class="text-titilo-info">
-                            TESTE LOCAL
-                        </h1>
-                        <h2 class="text-enreco-info">
-                            TESTE ENDEREÇO RUA NÃO DEFINIDO CASA NÃO DEFINIDO
-                        </h2>
+
+            <div id="perfio" style="display: none;" class="parte">
+                <h1 class="titulo-menu">Meu Perfil</h1>
+                <div class="info" id="caixa-info-perfil">
+                    <div class="caixa-info">
+                        {{!-- cardi do menu para adicionar locais salvos e historico --}}
                     </div>
                 </div>
             </div>
+
+            <div id="locais" style="display: none;" class="parte">
+                <h1 class="titulo-menu">Meus Locais</h1>
+                <div class="info" id="caixa-info-local">
+                    <div class="caixa-info">
+                        {{!-- cardi do menu para adicionar locais salvos e historico --}}
+                    </div>
+                </div>
+            </div>
+
+            <div id="hitorico" style="display: none;" class="parte">
+                <h1 class="titulo-menu">Historico</h1>
+                <div class="info" id="caixa-info">
+                    <div class="caixa-info">
+                        {{!-- cardi do menu para adicionar locais salvos e historico --}}
+                    </div>
+                </div>
+            </div>
+
+            {{!-- <h1 id="perfio" class="titulo-menu" style="display: none;">Meu Perfio</h1>
+            <h1 id="hitorico" class="titulo-menu" style="display: none;">Historico</h1>
+            <h1 id="locais" class="titulo-menu" style="display: none;">Meus Locais</h1>
+            <div class="info" id="caixa-info-local">
+                <div class="caixa-info-local">
+                    {{!-- cardi do menu para adicionar locais salvos e historico --}}
+                </div>
+            </div> --}}
         </div>
         <div class="menu-container" id="menu-container">
             <button class="myButton-m" onclick="btn_click(this,'perfio')"><img src="/img/perfil.png" alt="Ico Perfio"
