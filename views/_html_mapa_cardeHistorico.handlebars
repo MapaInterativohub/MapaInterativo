@@ -1,14 +1,14 @@
 <a href="#" onclick="maisInfo({{id}})">
   <div class="caixa-info-local">
     <div class="div-info-local">
-      <img src="/img/info-img.jpg" alt="Imagem do local" class="img-info">
+      <img src="/img/info-img.png" alt="Imagem do local" class="img-info">
     </div>
     <div class="endereco-info">
       <h1 class="text-titilo-info">
         {{dado.nome}}
       </h1>
       <h2 class="text-enreco-info">
-        {{dado.rua}}, {{dado.telefone}}, {{dado.bairro}}, {{dado.cidade}} - {{dado.estado}}
+        <strong>Endereço:</strong>{{dado.rua}}, {{dado.telefone}}, {{dado.bairro}}, {{dado.cidade}} - {{dado.estado}}
       </h2>
       <h2 id="data_hitorico{{dado.id}}"></h2>
     </div>

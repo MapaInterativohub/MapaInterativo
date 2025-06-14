@@ -5,10 +5,10 @@
       <img src="/img/ExemploDePopup.jpeg" alt="Imagem do local" id="img_popup" style="text-align: center;">
     <div class="text_popup" id="txt_popup_base">
       {{!-- <p><strong>Horário de Funcionamento:</strong><br>{{dado.breve}}<br>Sábados: 09h00 às 13h</p> --}}
-      <p><strong>Localização:</strong><br>{{dado.rua}}, {{dado.telefone}}, {{dado.bairro}}, {{dado.cidade}} - {{dado.estado}}</p>
+      <p class="text-popup"><strong>Localização:</strong><br>{{dado.rua}}, {{dado.telefone}}, {{dado.bairro}}, {{dado.cidade}} - {{dado.estado}}</p>
       <br>
-      <p><strong>Telefone:</strong> {{dado.numero}}</p>
-      <p><strong>Descrição:</strong> {{dado.descricao}}</p>
+      <p class="text-popup"><strong>Telefone:</strong> {{dado.numero}}</p>
+      <p class="text-popup"><strong>Descrição:</strong> {{dado.descricao}}</p>
     </div>
     <div class="buton">
       <button class="myButton" id="bts_popupA"onclick="addFavoritoscliente('{{dado.id}}')">Adiciona Favoritos</button>
