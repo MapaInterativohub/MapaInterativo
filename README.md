@@ -70,7 +70,7 @@ http://localhost:3000
 |----------------------------------|-------------------------------------------------------------|---------------|
 | `/home`                          | Página principal com o mapa e pontos de apoio              | Usuários      |
 | `/admin/gerenciarlocais`        | Gerenciar locais existentes (editar ou remover)             | Administrador |
-| `/admin/adicionarlocal`         | Adicionar novos locais ao sistema                           | Administrador |
+| `/admin/gerenciarlocais`         | Adicionar novos locais ao sistema                           | Administrador |
 
 > ⚠️ As rotas administrativas são protegidas e acessíveis somente por usuários com perfil **admin**.
 

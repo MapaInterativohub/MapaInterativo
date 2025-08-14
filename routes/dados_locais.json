@@ -644,5 +644,24 @@
     "descricao": "A Delegacia Especializada de Atendimento à Mulher (DEAM) no Espírito Santo é uma unidade da Polícia Civil dedicada ao combate à violência doméstica e de gênero. Sua principal função é acolher, orientar e proteger mulheres vítimas de violência física, psicológica, sexual, moral ou patrimonial. Além do registro de ocorrências, a DEAM realiza investigações, solicita medidas protetivas de urgência, e atua em parceria com redes de apoio como o Ministério Público, Defensoria Pública e serviços de assistência social. O objetivo é garantir atendimento humanizado e eficaz, promovendo a segurança e os direitos das mulheres em situação de vulnerabilidade.",
     "imagem": {},
     "id": 33
+  },
+  {
+    "categoria": "Trabalho",
+    "nome": "Fortez",
+    "cep": "29025686",
+    "rua": "Rua Alfredo Blackman",
+    "bairro": "Caratoíra",
+    "cidade": "Vitória",
+    "estado": "ES",
+    "numero": "101",
+    "complemento": "Rua da Lama",
+    "latitude": "-20.3162358",
+    "longitude": "-40.3536486",
+    "telefone": "12345678",
+    "email": "Email@com.br",
+    "breve": "Descrição",
+    "descricao": "Descrição completa",
+    "imagem": {},
+    "id": 34
   }
 ]
