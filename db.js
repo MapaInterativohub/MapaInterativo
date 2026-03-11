@@ -1,14 +1,12 @@
-const { Sequelize } = require("sequelize");  // Nome correto da classe
+// db.js
+const { Pool } = require("pg");
 
-const sequelize = new Sequelize("serve", "root", "admin", {
+const pool = new Pool({
+  user: "postgres",
   host: "localhost",
-  dialect: "mysql",
+  database: "mapa_interativo",
+  password: "1234",
+  port: 5432,
 });
 
-sequelize.authenticate()
-  .then(() => {
-    console.log("Conectado ao banco de dados!");
-  })
-  .catch((erro) => {
-    console.log("Erro ao conectar: " + erro);
-  });
+module.exports = pool;

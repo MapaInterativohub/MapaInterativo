@@ -1,11 +1,21 @@
 {
+  "name": "mapa-interativo",
+  "version": "1.0.0",
+  "description": "Plataforma de mapa interativo para pontos de apoio a mulheres em vulnerabilidade social.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
   "dependencies": {
     "body-parser": "^2.2.0",
     "express": "^5.1.0",
     "express-handlebars": "^8.0.1",
-    "mysql2": "^3.14.0"
+    "pg": "^8.12.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
-  }
+  },
+  "author": "Equipe do Projeto",
+  "license": "ISC"
 }

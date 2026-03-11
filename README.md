@@ -53,7 +53,7 @@ cd GitHub\MapaInterativo
 npm install
 
 # Inicie o servidor
-node App.Js
+node app.Js
 ```
 
 Depois, acesse no navegador:
@@ -85,6 +85,11 @@ Contribuições são bem-vindas! Abra uma issue ou envie um pull request com mel
 ## 📄 Licença
 
 Este projeto está sob a licença MIT. Consulte o arquivo `LICENSE` para mais informações.
+
+---
+
+## 👥 Equipe
+Phablo, Amanda Cezario, Ismailer, Micky e Cleber Zabam.
 
 ---
 

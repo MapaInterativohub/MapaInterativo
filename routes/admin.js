@@ -1,11 +1,10 @@
+// routes/admin.js
 const express = require("express");
 const router = express.Router();
-const fs = require("fs");
-const { console } = require("inspector");
 const path = require("path");
+const pool = require("../db"); // importa a conexão com o PostgreSQL
 
-const filePath = path.join(__dirname, "dados_locais.json");
-
+// Rota: formulário para adicionar locais
 router.get("/addlocais", (req, res) => {
   res.render("formulario_add_locais", {
     layout: "main_admin",
@@ -13,6 +12,8 @@ router.get("/addlocais", (req, res) => {
     js: ["script-formulario.js", "script-map.js", "script-busca-de-locais.js"],
   });
 });
+
+// Rota: tela de gerenciamento de locais
 router.get("/gerenciarlocais", (req, res) => {
   res.render("gerencia_locais", {
     layout: "main_admin",
@@ -21,59 +22,80 @@ router.get("/gerenciarlocais", (req, res) => {
   });
 });
 
-router.get("/pontos", (req, res) => {
-  fs.readFile(filePath, "utf8", (err, data) => {
-    if (err) {
-      console.error("Erro ao ler o arquivo JSON:", err);
-      return res.status(500).json({ erro: "Erro ao ler o arquivo JSON" });
-    }
+/* ==============================
+   ROTAS DE DADOS DO MAPA (BANCO)
+   ============================== */
 
-    try {
-      const json = JSON.parse(data);
-      res.json(json);
-    } catch (e) {
-      console.error("Erro ao fazer parse do JSON:", e);
-      res.status(500).json({ erro: "Erro ao fazer parse do JSON" });
-    }
-  });
+// GET /admin/pontos → Retorna todos os locais do banco
+router.get("/pontos", async (req, res) => {
+  try {
+    const resultado = await pool.query(`
+      SELECT 
+        id_local AS id,
+        nome,
+        descricao,
+        telefone,
+        email,
+        imagem,
+        latitude,
+        longitude,
+        numero,
+        complemento,
+        id_categoria,
+        id_gestor,
+        nomeCidade AS cidade,
+        estado,
+        bairro,
+        rua,
+        cep
+      FROM Local
+    `);
+
+    res.json(resultado.rows); // envia os dados para o mapa
+  } catch (err) {
+    console.error("Erro ao consultar o banco:", err);
+    res.status(500).json({ erro: "Erro ao buscar dados no banco" });
+  }
 });
 
-router.get("/pontos/:id", (req, res) => {
+// GET /admin/pontos/:id → Retorna um local específico e renderiza popup do mapa
+router.get("/pontos/:id", async (req, res) => {
   const id = parseInt(req.params.id);
+  try {
+    const { rows } = await pool.query(
+      "SELECT * FROM Local WHERE id_local = $1",
+      [id]
+    );
 
-  fs.readFile(filePath, "utf8", (err, data) => {
-    if (err) return res.status(500).send("Erro ao ler arquivo JSON");
-    console.log(res);
-    const pontos = JSON.parse(data);
-    const dado = pontos.find((p) => p.id === id);
+    if (rows.length === 0)
+      return res.status(404).send("Ponto não encontrado");
 
-    if (!dado) return res.status(404).send("Ponto não encontrado");
-
-    // Renderiza apenas o partial com layout false
-    // res.json(pontos)
+    const dado = rows[0];
     res.render("_html_mapa_popup_map", { layout: false, dado });
-  });
+  } catch (err) {
+    console.error("Erro ao buscar ponto:", err);
+    res.status(500).send("Erro no banco de dados");
+  }
 });
 
-router.get("/ponto/:id", (req, res) => {
+// GET /admin/ponto/:id → Renderiza o card de favoritos
+router.get("/ponto/:id", async (req, res) => {
   const id = parseInt(req.params.id);
+  try {
+    const { rows } = await pool.query(
+      "SELECT * FROM Local WHERE id_local = $1",
+      [id]
+    );
 
-  fs.readFile(filePath, "utf8", (err, data) => {
-    if (err) return res.status(500).send("Erro ao ler arquivo JSON");
-    console.log(res);
-    const pontos = JSON.parse(data);
-    const dado = pontos.find((p) => p.id === id);
+    if (rows.length === 0)
+      return res.status(404).send("Ponto não encontrado");
 
-    if (!dado) return res.status(404).send("Ponto não encontrado");
-
-    // Renderiza apenas o partial com layout false
-    pontos.forEach( dado => {
-      if (dado.id === id) {
-        // res.json(dado)
-        res.render("_html_mapa_cardeFavoritos", { layout: false, dado });
-      }
-    });
-  });
+    const dado = rows[0];
+    res.render("_html_mapa_cardeFavoritos", { layout: false, dado });
+  } catch (err) {
+    console.error("Erro ao buscar ponto:", err);
+    res.status(500).send("Erro no banco de dados");
+  }
 });
 
 module.exports = router;
